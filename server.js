@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 
 app.get('/', function (req, res) {
-  res.render('index', {weather: null, error: null});
+  res.render('index', {data: null, error: null});
 })
 
 app.post('/', function (req, res) {
@@ -21,12 +21,12 @@ app.post('/', function (req, res) {
     if(err){
       res.render('index', {weather: null, error: 'Error, please try again...'});
     } else {
-      let weather = JSON.parse(body)
-      if(weather.main == undefined){
-        res.render('index', {weather: null, error: 'Error, please try again...'});
+      let data = JSON.parse(body)
+      if(data.main == undefined){
+        res.render('index', {data: null, error: 'Error, please try again...'});
       } else {
-        let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
-        res.render('index', {weather: weatherText, error: null});
+        let dataText = `dataFound`;
+        res.render('index', {weather: dataText, error: null});
       }
     }
   });
