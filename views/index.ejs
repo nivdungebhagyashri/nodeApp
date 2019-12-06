@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <!----meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' data: fonts.gstatic.com;"--->
     <title>Test</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
@@ -11,7 +12,7 @@
         <fieldset >
         <div class="form-style-2">
         <div class="form-style-2-heading">Please enter values of the variables</div>
-        <form action="/" method="post">
+        <form action="/send" method="post" >
           <label for="is_goal">
             <span>is_goal </span>
             <input type="number" class="input-field" name="is_goal" value="" />
@@ -52,30 +53,34 @@
               <span>right_side_6ybox  </span>
               <input type="number" class="input-field" name="right_side_6ybox" value="" />
           </label>
-          <label for="close_range ">
-              <span>close_range   </span>
+          <label for="close_range">
+              <span>close_range </span>
               <input type="number" class="input-field" name="close_range" value="" />
           </label>
-          <label for="penalty ">
-              <span>penalty   </span>
+          <label for="penalty">
+              <span>penalty</span>
               <input type="number" class="input-field" name="penalty" value="" />
           </label>
           <label for="outside_box">
-              <span>outside_box  </span>
+              <span>outside_box</span>
               <input type="number" class="input-field" name="outside_box" value="" />
           </label>
-          <label for="long_range ">
-              <span>long_range   </span>
+          <label for="long_range">
+              <span>long_range</span>
               <input type="number" class="input-field" name="long_range" value="" />
           </label>
           <label for="more_35y">
-              <span>more_35y  </span>
+              <span>more_35y</span>
               <input type="number" class="input-field" name="more_35y" value="" />
           </label>
           <label for="more_40y">
               <span>more_40y  </span>
               <input type="number" class="input-field" name="more_40y" value="" />
           </label>
+          <label for="not_recorded">
+            <span>not_recorded </span>
+            <input type="number" class="input-field" name="not_recorded" value="" />
+        </label>
           <label for="right_foot">
               <span>right_foot'  </span>
               <input type="number" class="input-field" name="right_foot" value="" />
@@ -88,9 +93,9 @@
               <span>header  </span>
               <input type="number" class="input-field" name="header" value="" />
           </label>
-          <label for="header">
-              <span>header  </span>
-              <input type="number" class="input-field" name="header" value="" />
+          <label for="no_assist">
+              <span>no_assist </span>
+              <input type="number" class="input-field" name="no_assist" value="" />
           </label>
           <label for="assist_pass">
               <span>assist_pass  </span>
@@ -101,7 +106,7 @@
               <input type="number" class="input-field" name="assist_cross" value="" />
           </label>
           <label for="assist_header">
-              <span>assist_header  </span>
+              <span>assist_header</span>
               <input type="number" class="input-field" name="assist_header" value="" />
           </label>
           <label for="assist_through_ball">
@@ -124,11 +129,9 @@
               <span>free_kick  </span>
               <input type="number" class="input-field" name="free_kick" value="" />
           </label>
-          <label for="field1">
-              <span>submit  </span>
-              <input type="number" class="input-field" name="field1" value="" />
-          </label>
-          <label><span> </span><input type="submit" value="Submit" /></label>
+          
+          <label><input id="submitButton" type="submit" value="Submit" />
+        </label>
         </form>
 
         <% if(data !== null){ %>
